@@ -1,0 +1,198 @@
+.skeleton {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 80%);
+    }
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+.loadingSpinner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #f3f3f3;
+    border-top: 2px solid rgb(20, 20, 20);
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.Zham_Button {
+    position: fixed;
+    right: 40px;
+    bottom: 90px;
+    z-index: 9999;
+    width: max-content;
+}
+.Zham_Button > div {
+    width: max-content;
+    position: relative;
+}
+.zB_text {
+    width: max-content;
+    max-width: 240px;
+    padding: 13px 21px;
+    border-radius: 18px;
+    background-color: #fff;
+    position: absolute;
+    right: 132%;
+    bottom: 0px;
+    box-shadow: 1px -1px 1px 6px rgba(18, 18, 18, 0.045);
+}
+.zB_text::before {
+    content: "";
+    position: absolute;
+    bottom: 21px;
+    right: -6px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+.zB_text {
+    display: none;
+    flex-direction: column;
+}
+/* .Zham_Button:hover .zB_text,  */
+.zB_text.true {
+    display: flex;
+}
+.zBt1 {
+    font-size: 16.5px;
+    font-weight: 800;
+    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.zBt-icon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    color: #000000;
+    opacity: 0.85;
+}
+.zBt2 {
+    margin-top: 8px;
+    font-size: 15px;
+    opacity: 0.72;
+    line-height: 1.2rem;
+    font-weight: 500;
+}
+.Z_Button {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 1px -1px 1px 6px rgba(18, 18, 18, 0.045);
+}
+.Z_Button, .zB_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zB_img {
+    width: 51px;
+    height: 51px;
+    background-color: #066aff;
+    border-radius: 50%;
+    animation: scale 1.5s ease-out;
+    animation-iteration-count: infinite;
+}
+.zB_img img {
+    width: 70px;
+    height: 100%;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
+}
+
+/* Toast alert */
+.Fm_notification {
+    position: absolute;
+    top: 15px;
+    right: 21px;
+    width: max-content;
+    max-width: min(calc(100% - 30px), 300px);
+    z-index: 9999999;
+}
+.Fm_notification_div {
+    width: max-content;
+    max-width: 100%;
+    padding: 12px 12px;
+    padding-left: 15px;
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+.Fm_notification_div::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 7px;
+    z-index: 1;
+    height: 100%;
+    background-color: rgba(18, 18, 18, 0.24);
+}
+.Fm_notification_div span {
+    font-size: 15px;
+    color: #000000;
+    opacity: 0.72;
+    display: inline-block;
+    width: calc(100% - 36px);
+    line-height: 1.4rem;
+    margin-left: 3px;
+}
+.Fmn_close_btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-left: 9px;
+    border-radius: 8px;
+    background-color: rgba(18, 18, 18, 0.06);
+    flex: 1 2;
+}
+.Fmn_close_btn:hover {
+    background-color: rgba(18, 18, 18, 0.12);
+}
+.Fmn_close {
+    width: 14.5px;
+    height: 14.5px;
+    color: #000000;
+    opacity: 0.72;
+}

@@ -1,0 +1,130 @@
+.Zham {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: linear-gradient(180deg, #0bf, #066aff 50%);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999998;
+}
+.Zham_main {
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.Zham_footer {
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    bottom: 90px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+}
+.zf_button {
+    width: min(100%, 350px);
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #066aff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.Zham_Pulse {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 110px;
+}
+.pulse_img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-pulse img {
+    height: 100%;
+}
+.Zham_Pulse h2 {
+    font-size: 24.5px;
+    font-weight: 800;
+    color: var(--white);
+    margin: 10px 0;
+}
+.Zham_Pulse span {
+    font-size: 16px;
+    color: var(--white);
+    opacity: 0.75;
+}
+
+
+.no-pulse {
+    width: 120px;
+    height: 120px;
+    border: none;
+    outline: none;
+    background: hsla(0, 0%, 100%, 0.13);
+    border-radius: 50%;
+    z-index: 3;
+    position: relative;
+    animation: scale 1.5s ease-out;
+    animation-iteration-count: infinite;
+}
+.pulse1, .pulse2, .pulse3 {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+}
+.Zham_Pulse.true .pulse1, 
+.Zham_Pulse.true .pulse2, 
+.Zham_Pulse.true .pulse3 {
+    /* background-color: #63a0fc; */
+    background: hsla(0, 0%, 100%, 0.33);
+    animation: pulse 1.3s ease-in-out;
+    animation-iteration-count: infinite;
+    /* animation: pulse 1.3s infinite; */
+}
+.Zham_Pulse.true .pulse2 {
+    animation-delay: 0.1s;
+}
+.Zham_Pulse.true .pulse3 {
+    animation-delay: 0.3s;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    /* 50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    } */
+    100% {
+        transform: scale(3.3);
+        opacity: 0;
+    }
+}
+/* .Zham_Pulse.false {
+    animation: scale 0.5s ease-in-out 0.01s infinite;
+} */
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
