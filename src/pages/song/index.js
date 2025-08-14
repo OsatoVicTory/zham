@@ -219,6 +219,12 @@ export default function Song() {
                             </li>
                             <li>
                                 <div className="smmd_li">
+                                    <span className="smm_span_1">Song is not in database</span>
+                                    <span className="smm_span_2"><b>Solution: </b>Play only any of 10 songs in the home page (click logo up)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div className="smmd_li">
                                     <span className="smm_span_1">Speaker too far from recording device</span>
                                     <span className="smm_span_2"><b>Solution: </b>Place speaker close to recording device</span>
                                 </div>

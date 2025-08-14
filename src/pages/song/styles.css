@@ -263,11 +263,12 @@
 .smm_div h1 {
     font-size: 34.5px;
     font-weight: 800;
-    /* margin-top: 0px; */
+    margin-top: 0px;
 }
 .smm_div p {
     font-size: 18px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 .smm_div > ul {
     display: inline-block;
@@ -349,41 +350,52 @@
 
 @media screen and (max-width: 1300px) {
     .smm_div h1 {
-        font-size: 28.5px;
+        font-size: 26.5px;
     }
     .smm_div p {
-        font-size: 16px;
+        font-size: 15px;
     }
     .smm_div ul li {
-        margin-top: 15px;
+        margin-top: 12px;
     }
     .smm_span_1 {
-        font-size: 16.5px;
+        font-size: 14.5px;
     }
     .smm_span_2 {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 1200px) {
+    .smm_div h1 {
+        font-size: 25px;
+    }
     .smm_div p {
         margin-bottom: 6px;
     }
+    .smm_div ul li {
+        margin-top: 12px;
+    }
     .smm_span_1 {
-        font-size: 15px;
+        font-size: 14px;
     }
     .smm_span_2 {
         margin-top: 10px;
-        font-size: 14.5px;
+        font-size: 13.5px;
     }
 }
 @media screen and (max-width: 1100px) {
-    .smm_div h1 {
-        margin-top: 10px;
-    }
     .SH, .SMt_content, .SM_mid {
         padding-left: 75px;
         padding-right: 75px;
+    }
+}
+@media screen and (max-width: 1049px) {
+    .smm_div h1 {
+        font-size: 23.5px;
+    }
+    .smm_div ul li {
+        margin-top: 10px;
     }
 }
 @media screen and (max-width: 800px) {
@@ -401,6 +413,22 @@
     }
     .smm_div {
         margin-top: 30px;
+    }
+    .smm_div h1 {
+        font-size: 26.5px;
+    }
+    .smm_div p {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+    .smm_div ul li {
+        margin-top: 12px;
+    }
+    .smm_span_1 {
+        font-size: 14.5px;
+    }
+    .smm_span_2 {
+        font-size: 14px;
     }
 }
 @media screen and (max-width: 680px) {

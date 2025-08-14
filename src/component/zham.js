@@ -16,6 +16,7 @@ export default function Zham() {
     const { setZham, recorder, setRecorder } = useContext(AppContext);
     const [recordingStatus, setRecordingStatus] = useState("");
     const [error, setError] = useState(false);
+    const [noResult, setNoResult] = useState(false);
     const streamRef = useRef(null);
     const registeredMediaEncoder = useRef(false);
     
@@ -46,6 +47,7 @@ export default function Zham() {
 
     const startRecording = useCallback(async () => {
         setError(false);
+        setNoResult(false);
         if(recordingStatus) return;
 
         try {
@@ -99,6 +101,12 @@ export default function Zham() {
 
                     setRecordingStatus("");
                     setZham(false);
+                    
+                    if(!Results[0]) {
+                        setNoResult(true);
+                        return;
+                    }
+
                     navigate(`/song/${Results[0]}?zhamCount=${ZhamCount}`, { state: { songIds: Results } });
                 } catch(err) {
                     console.log("media stop err", err);
@@ -113,7 +121,7 @@ export default function Zham() {
             setRecordingStatus("");
             cleanup();
         }
-    }, [recorder, setRecorder, navigate, setZham, recordingStatus]);
+    }, [recorder, recordingStatus, setRecorder, navigate, setZham, setNoResult, setError]);
 
     return (
         <div className="Zham">
@@ -143,7 +151,10 @@ export default function Zham() {
                         <h2>
                             {recordingStatus || "Click button up to Zham"}
                         </h2>
-                        <span>{recordingStatus ? "Please wait" : "Waiting on you"}</span>
+                        <span>{
+                            noResult ? "No match for recorded song. Increase volume and record an actual song":
+                            recordingStatus ? "Please wait" : "Waiting on you"
+                        }</span>
                     </div>
                 </div>
                 <div className="Zham_footer">
